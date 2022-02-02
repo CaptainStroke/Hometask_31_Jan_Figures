@@ -1,7 +1,7 @@
 ﻿// 1. Написать программу, которая выводят на экран ромб(длины диагоналей ромба одинаковы по значению,
 //но могут быть равны любому числу).
 //Затем сделать то же самое, но чтоб фигура внутри была пустая(остаётся только контур).
-
+//
 //#include <iostream>
 //#include <Windows.h>
 //using namespace std;
@@ -109,64 +109,40 @@
 
 //3. Вывести лестницу из отрезков определённой длины.Длина(например, 14) и количество ступенек(например, 4) указывается с клавиатуры.
 
-//#include <iostream>
+//#include <iostream> // ladder 
 //#include <Windows.h>
 //using namespace std;
 //int main()
 //{
 //    int width = 35;
 //    int height = 10;
-//    cout << "Enter the number of steps - ";
-//    cin >> height; 
+//    cout << "Enter the size of the step - ";
 //    int z;
-//    cout << "Enter the size of the step - "; 
 //    cin >> z;
+//    cout << "Enter the number step - ";
+//    cin >> height;
+//    char symbol = 178;
 //    for (int y = 0; y < height; y++)
-//    {        
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 //        for (int x = 0; x < width; x++)
 //        {
-//            if (x <= y || x - z >= y)
+//            if (x <= y || x - z -1 >= y)
 //            {
-//                cout << " ";
+//                SetConsoleTextAttribute(h, 12); // light blue diagonals
 //            }
 //            else
 //            {
-//                cout << "*"; // blue triangles
-//            }        
+//                SetConsoleTextAttribute(h, 9); // blue triangles
+//            }
+//            cout << symbol << symbol;
 //        }
 //        cout << "\n";
 //    }
 //}
-
-//#include <iostream> // in color
-//#include <iostream>
-//#include <Windows.h>
-//using namespace std;
-//int main()
-//{
-//    int width = 9;
-//    cout << "Enter the number size(better odd) of Rombus. - \n";
-//   // cin >> width;
-//    int height = width;
-//    for (int y = 0; y < height; y++)
-//    {
-//        for (int x = 0, z = 0; x < width; x++)
-//        {      // 3rd quadrant        1st quadrant         4th quadrant           2nd quadrant
-//            if(y *2 == x  || y*2 == x + 2)
-//            {
-//                cout << "*";
-//            }
-//            else if (y *2 + 1 == )
-//            {
-//                cout << "\n0";
-//            }
-//        }
-//        cout << "\n";
-//        
-//    }
-//}
-
-//#include <iostream>
+// 4. Показать на экране лесенку. Количество ступенек(например, 5) указывает пользователь.
+ 
+//#include <iostream>  // steps of ladders from stars
 //#include <Windows.h>
 //using namespace std;
 //int main()
@@ -178,26 +154,24 @@
 //    cin >> step;
 //    int height = 0;
 //    height = step * 2;
-//    //char symbol = 178;
 //    for (int y = 0; y < height; y++)
 //    {
-//        
 //        for (int x = 0; x < width; x++)
 //        {
 //            if (y % 2 != 0 && x % 2 != 0 || x <= y - 1 || x - z >= y)
 //            {
-//                cout << "*";
+//                cout << " ";
 //            }
 //            else
 //            {
-//                cout << " ";
+//                cout << "*";
 //            }
-//        {    
+//        }
 //        cout << "\n";
 //    }
 //}
 
-//#include <iostream>
+//#include <iostream> // steps of ladders with graphics
 //#include <Windows.h>
 //using namespace std;
 //int main()
@@ -231,41 +205,363 @@
 
 
 
-//5. Пользователь указывает с клавиатуры нечётное число.Рисуется фигура с заданной стороной :
+//5. Пользователь указывает с клавиатуры нечётное число. Рисуется фигура с заданной стороной :
 
-//6.  Необходимо  нарисовать ёлочку. С клавиатуры вводится количество ярусов, и высота каждого яруса ёлочки.
-//Например, на картинке 4 яруса, высота каждого яруса – 5 символов.
-
-
-
-//#include <iostream>
+//#include <iostream> // Figure 1
 //#include <Windows.h>
 //using namespace std;
 //int main()
 //{
-//    int width = 35;
-//    int height = 10;
-//    cout << "Enter the size of the step - ";
-//    int z;
-//    cin >> z;
-//    cout << "Enter the number step - ";
-//    cin >> height;
+//    int width = 13;
+//    //cout << "Enter the number size(better odd) of Rombus. - \n";
+//    //cin >> width;
+//    int height =13;
 //    char symbol = 178;
 //    for (int y = 0; y < height; y++)
 //    {
 //        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//                
 //        for (int x = 0; x < width; x++)
-//        {        
-//             if ( x <= y || x - z >= y)
+//        {      
+//            if ( y == width -1 || y == 0 ||  x == width -1|| x == 0 || x==y) 
 //            {
-//              SetConsoleTextAttribute(h, 12); // light blue diagonals
+//                SetConsoleTextAttribute(h, 12); // light blue diagonals
 //            }
-//             else
-//            {                
+//            else
+//            {
 //                SetConsoleTextAttribute(h, 9); // blue triangles
 //            }
 //            cout << symbol << symbol;
 //        }
 //        cout << "\n";
 //    }
-// }  
+//}
+
+//#include <iostream> // Figure 2
+//#include <Windows.h>
+//using namespace std;
+//int main()
+//{
+//    int width = 13;
+//    //cout << "Enter the number size(better odd) of Rombus. - \n";
+//    //cin >> width;
+//    int height = 13;
+//    char symbol = 178;
+//    for (int y = 0; y < height; y++)
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//
+//        for (int x = 0; x < width; x++)
+//        {
+//            if (y == width - 1 || y == 0 || x == width - 1 || x == 0 ||  x == width - y - 1 )
+//            {
+//                SetConsoleTextAttribute(h, 12); // light blue diagonals
+//            }
+//            else
+//            {
+//                SetConsoleTextAttribute(h, 9); // blue triangles
+//            }
+//            cout << symbol << symbol;
+//        }
+//        cout << "\n";
+//    }
+//}
+
+//#include <iostream> // Figure 3
+//#include <Windows.h>
+//using namespace std;
+//int main()
+//{
+//    int width = 13;
+//    //cin >> width;
+//    int height = 13;
+//    height = width;
+//    char symbol = 178;
+//    for (int y = 0; y < height; y++)
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//
+//        for (int x = 0; x < width; x++)
+//        {
+//            if (y == width - 1 || y == 0 || x == width - 1 || x == 0 || x == width/2)
+//            {
+//                SetConsoleTextAttribute(h, 12); // light blue diagonals
+//            }
+//            else
+//            {
+//                SetConsoleTextAttribute(h, 9); // blue triangles
+//            }
+//            cout << symbol << symbol;
+//        }
+//        cout << "\n";
+//    }
+//}
+
+//#include <iostream> // Figure 4
+//#include <Windows.h>
+//using namespace std;
+//int main()
+//{
+//    int width = 13;
+//    //cin >> width;
+//    int height = 13;
+//    height = width;
+//    char symbol = 178;
+//    for (int y = 0; y < height; y++)
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//
+//        for (int x = 0; x < width; x++)
+//        {
+//            if (y == width - 1 || y == 0 || x == width - 1 || x == 0 || y == width / 2)
+//            {
+//                SetConsoleTextAttribute(h, 12); // light blue diagonals
+//            }
+//            else
+//            {
+//                SetConsoleTextAttribute(h, 9); // blue triangles
+//            }
+//            cout << symbol << symbol;
+//        }
+//        cout << "\n";
+//    }
+//}
+
+//#include <iostream> // Figure 5 Arrows
+//#include <Windows.h>
+//using namespace std;
+//int main()
+//{
+//    int width = 13;
+//    //cin >> width;
+//    int height = 13;
+//    height = width;
+//    char symbol = 178;
+//    for (int y = 0; y < height; y++)
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//        for (int x = 0; x < width; x++)
+//        {
+//            if (y == 0 && x <= width/2 || y == width - 1 && x >= width / 2 || x == 0 && y <= width /2 || x == width - 1 && y >= width / 2 || x == y)
+//            {
+//                SetConsoleTextAttribute(h, 12); // light blue diagonals
+//            }
+//            else
+//            {
+//                SetConsoleTextAttribute(h, 9); // blue triangles
+//            }
+//            cout << symbol << symbol;
+//        }
+//        cout << "\n";
+//    }
+//}
+
+//#include <iostream> // Figure 6 Arrows
+//#include <Windows.h>
+//using namespace std;
+//int main()
+//{
+//    int width = 13;
+//    //cin >> width;
+//    int height = 13;
+//    height = width;
+//    char symbol = 178;
+//    for (int y = 0; y < height; y++)
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//        for (int x = 0; x < width; x++)
+//        {
+//            if (y == 0 && x >= width / 2 || y == width - 1 && x<= width / 2  || x == 0 && y >= width / 2 || x == width -1 && y <= width / 2 || x == width - y - 1)
+//            {
+//                SetConsoleTextAttribute(h, 12); // light blue diagonals
+//            }
+//            else
+//            {
+//                SetConsoleTextAttribute(h, 9); // blue triangles
+//            }
+//            cout << symbol << symbol;
+//        }
+//        cout << "\n";
+//    }
+//}
+
+//#include <iostream> // Figure 7 Envelope
+//#include <Windows.h>
+//using namespace std;
+//int main()
+//{
+//    int width = 13;
+//    //cin >> width;
+//    int height = 13;
+//    height = width;
+//    char symbol = 178;
+//    for (int y = 0; y < height; y++)
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//        for (int x = 0; x < width; x++)
+//        {
+//            if (y == 0 || y == width -1 || x == 0 || x == width - 1 || y == x || x == width - y - 1 )
+//            {
+//                SetConsoleTextAttribute(h, 12); // light blue diagonals
+//            }
+//            else
+//            {
+//                SetConsoleTextAttribute(h, 9); // blue triangles
+//            }
+//            cout << symbol << symbol;
+//        }
+//        cout << "\n";
+//    }
+//}
+
+//#include <iostream> // Figure 8 Coil
+//#include <Windows.h>
+//using namespace std;
+//int main()
+//{
+//    int width = 13;
+//    //cin >> width;
+//    int height = 13;
+//    height = width;
+//    char symbol = 178;
+//    for (int y = 0; y < height; y++)
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//        for (int x = 0; x < width; x++)
+//        {
+//            if ( x == 0 || x == width - 1 || y == x || x == width - y - 1)
+//            {
+//                SetConsoleTextAttribute(h, 12); // light blue diagonals
+//            }
+//            else
+//            {
+//                SetConsoleTextAttribute(h, 9); // blue triangles
+//            }
+//            cout << symbol << symbol;
+//        }
+//        cout << "\n";
+//    }
+//}
+
+//#include <iostream> // Figure 9 Sun clock
+//#include <Windows.h>
+//using namespace std;
+//int main()
+//{
+//    int width = 13;
+//    //cin >> width;
+//    int height = 13;
+//    height = width;
+//    char symbol = 178;
+//    for (int y = 0; y < height; y++)
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//        for (int x = 0; x < width; x++)
+//        {
+//            if (y == 0 || y == width - 1 ||  y == x || x == width - y - 1)
+//            {
+//                SetConsoleTextAttribute(h, 12); // light blue diagonals
+//            }
+//            else
+//            {
+//                SetConsoleTextAttribute(h, 9); // blue triangles
+//            }
+//            cout << symbol << symbol;
+//        }
+//        cout << "\n";
+//    }
+//}
+
+//#include <iostream> // Figure 10 Window
+//#include <Windows.h>
+//using namespace std;
+//int main()
+//{
+//    int width = 13;
+//    //cin >> width;
+//    int height = 13;
+//    height = width;
+//    char symbol = 178;
+//    for (int y = 0; y < height; y++)
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//        for (int x = 0; x < width; x++)
+//        {
+//            if (y == 0 || y == width - 1 || x == 0 || x == width - 1 || y == width / 2 || x == width / 2)
+//            {
+//                SetConsoleTextAttribute(h, 12); // light blue diagonals
+//            }
+//            else
+//            {
+//                SetConsoleTextAttribute(h, 9); // blue triangles
+//            }
+//            cout << symbol << symbol;
+//        }
+//        cout << "\n";
+//    }
+//}
+
+//#include <iostream> // Figure 11 Left eight
+//#include <Windows.h>
+//using namespace std;
+//int main()
+//{
+//    int width = 13;
+//    //cin >> width;
+//    int height = 13;
+//    height = width;
+//    char symbol = 178;
+//    for (int y = 0; y < height; y++)
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//        for (int x = 0; x < width; x++)
+//        {
+//            if ((x == width / 2 && y != 0 && y != width/2 && y != width - 1) || (y == width / 2 && x != 0 && x != width / 2  && x != width -1) || (y == 0 && x > width / 2 && x != width - 1) || (y == width - 1 && x < width / 2 && x != 0) ||(x == 0 && y > width / 2 && y != width -1)|| (x == width - 1 && y < width / 2 && y != 0))
+//                // x == 0 && y > width / 2 ||  )
+//            {
+//                SetConsoleTextAttribute(h, 12); // light blue diagonals
+//            }
+//            else
+//            {
+//                SetConsoleTextAttribute(h, 9); // blue triangles
+//            }
+//            cout << symbol << symbol;
+//        }
+//        cout << "\n";
+//    }
+//}
+
+//#include <iostream> // Figure 5 Arrows
+//#include <Windows.h>
+//using namespace std;
+//int main()
+//{
+//    int width = 13;
+//    cin >> width;
+//    int height = 13;
+//    height = width;
+//    char symbol = 178;
+//    for (int y = 0; y < height; y++)
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//        for (int x = 0; x < width; x++)
+//        {
+//            if ((y == 0 && x < width/2 && x != 0) || ( x == 0 && y < width /2 && y != 0 ) || (y == width - 1 && x > width / 2 && x != width -1) ||( x == width - 1 && y > width / 2 && y != width - 1) || (x == width / 2 && y != 0 && y != width / 2 && y != width - 1) || (y == width / 2 && x != 0 && x != width / 2 && x != width -1 ))
+//            {
+//                SetConsoleTextAttribute(h, 12); // light blue diagonals
+//            }
+//            else
+//            {
+//                SetConsoleTextAttribute(h, 9); // blue triangles
+//            }
+//            cout << symbol << symbol;
+//        }
+//        cout << "\n";
+//    }
+//}
+
+//6.  Необходимо  нарисовать ёлочку. С клавиатуры вводится количество ярусов, и высота каждого яруса ёлочки.
+//Например, на картинке 4 яруса, высота каждого яруса – 5 символов.
+
+
+
