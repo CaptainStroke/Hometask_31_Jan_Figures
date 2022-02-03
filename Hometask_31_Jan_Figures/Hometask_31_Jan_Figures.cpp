@@ -563,5 +563,137 @@
 //6.  Необходимо  нарисовать ёлочку. С клавиатуры вводится количество ярусов, и высота каждого яруса ёлочки.
 //Например, на картинке 4 яруса, высота каждого яруса – 5 символов.
 
+#include <iostream>
+#include <Windows.h>
+using namespace std;
+int main()
+{
+    int width = 23;
+    cout << "Enter the number branches on row. - ";
+    //cin >> width;
+    int height = 4;
+    cin >> height;
+    height -= 1;
+    int b = -1;
+    int row;
+    cout << "Enter the number of rows. - ";
+    cin >> row;
+    for (int i = 0; i < row; i++)
+    {
+        height += 1; b ++;
+        for (int y = 0 + b; y < height; y++)
+        {
+            for (int x = 0; x < width; x++)
+            {      
+                HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+                if (y <= x - width / 2 - 1 || y <= width / 2 - x - 1)
+                {
+                    cout << "  ";
+                }
+                else
+                {
+                    SetConsoleTextAttribute(h, 2);
+                    cout << "<>";
+                }
+            }
+            cout << "\n";
+        }
+    }
+    for (int y = 0; y < height -2; y++)
+    {
+        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+        for (int x = 0; x < width; x++)
+        {        //1st quadrant         4th quadrant    
+            if (x < width / 2 + 2 && x > width / 2 - 2)
+            {
+                SetConsoleTextAttribute(h, 4);
+                cout << "<>";
+            }
+            else
+            {
+                cout << "  ";
+            }
+        }
+        cout << "\n";
+    }
+}
 
-
+//
+//#include <iostream>
+//#include <Windows.h>
+//using namespace std;
+//int main()
+//{
+//    int width = 23;
+//    //cout << "Enter the number size(better odd) of Rombus. - ";
+//    //cin >> width;
+//    int height = 5;
+//    for (int y = 0; y < height; y++)
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//        for (int x = 0; x < width; x++)
+//        {        //1st quadrant         4th quadrant    
+//            if (y <= x - width / 2 -1 ||  y <= width/2 - x -1)
+//            {
+//                cout << "  ";
+//            }
+//            else
+//            {
+//                SetConsoleTextAttribute(h, 2);
+//                cout << "<>";
+//            }
+//        }
+//        cout << "\n";
+//    }
+//    height += 2;
+//    for (int y = 2; y < height; y++)
+//    {
+//        for (int x = 0; x < width; x++)
+//        {        //1st quadrant         4th quadrant    
+//            if (y <= x - width / 2 - 1 || y <= width / 2 - x - 1)
+//            {
+//                cout << "  ";
+//            }
+//            else
+//            {
+//                cout << "<>";
+//            }
+//        }
+//        cout << "\n";
+//    }
+//    height += 2;
+//    for (int y = 4; y < height; y++)
+//    {
+//        for (int x = 0; x < width; x++)
+//        {        //1st quadrant         4th quadrant    
+//            if (y <= x - width / 2 - 1 || y <= width / 2 - x - 1)
+//            {
+//                cout << "  ";
+//            }
+//            else
+//            {
+//                cout << "<>";
+//            }
+//        }
+//        cout << "\n";
+//    }
+//    for (int y = 0; y < height -4; y++)
+//    {
+//        HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//        for (int x = 0; x < width; x++)
+//        {        //1st quadrant         4th quadrant    
+//            if (x < width/2 + 2 && x > width / 2 -2)
+//            {
+//                SetConsoleTextAttribute(h, 4);
+//                cout << "<>";
+//            }
+//            else
+//            {
+//                cout << "  ";
+//            }
+//        }
+//        cout << "\n";
+//    }
+//}
+//
+//
